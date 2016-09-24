@@ -1,0 +1,21 @@
+package casa;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class FiguraCompuesta {
+	
+	List <Figura> Componentes = new LinkedList <Figura> ();  
+	
+	public FiguraCompuesta(){
+	}
+	
+	public double getSize(){
+		int total = 0;
+		for(Figura e: Componentes)
+			total +=e.getSize();
+		return total;
+	}
+	
+
+}

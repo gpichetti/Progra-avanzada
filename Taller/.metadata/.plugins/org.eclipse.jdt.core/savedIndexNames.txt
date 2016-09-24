@@ -1,0 +1,6 @@
+INDEX VERSION 1.127+C:\Users\laboratorios.UNLMLAB.000\Desktop\Taller\.metadata\.plugins\org.eclipse.jdt.core
+1144809061.index
+1193697320.index
+199828911.index
+1387455045.index
+2013169717.index

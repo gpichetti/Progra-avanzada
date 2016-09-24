@@ -1,0 +1,12 @@
+package tren;
+
+public class Triangulo extends Figura{
+	
+	double base;
+	double altura;
+	
+	public double getSize(){
+		return (base*altura)/2;
+	}
+
+}

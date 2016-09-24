@@ -1,0 +1,59 @@
+package formandoEquipos;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class FormandoEquipos {
+	
+	int preguntas;
+	int colaboradores;
+	String respuestas[];
+
+	
+	public FormandoEquipos (String ruta) throws FileNotFoundException{
+		Scanner sc = new Scanner(new File(ruta));
+		this.preguntas = sc.nextInt();
+		this.colaboradores = sc.nextInt();	
+		this.respuestas = new String [this.colaboradores];
+		sc.nextLine();
+		for (int i = 0; i < (this.colaboradores); i++) {
+			this.respuestas[i]=sc.nextLine();
+		}
+		sc.close();
+			
+	}
+	
+	public void resolver(){
+		String cadena;
+		int cantidad=0;
+		this.ordenar();
+		for(int i=0;i<this.colaboradores;i++){
+			for (int j=i+1;j<this.colaboradores;j++){
+				if(this.respuestas[i].equals(this.respuestas[j])){
+					cadena=this.respuestas[i];
+					cantidad++;
+				}
+					
+			}
+		}
+				
+	}
+	
+	public void ordenar(){
+		Arrays.sort(this.respuestas);
+		for (int i = 0; i < (this.colaboradores); i++) {
+			System.out.println(this.respuestas[i]);
+			}		
+	}
+	
+	
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		FormandoEquipos f = new FormandoEquipos("equipo.in");
+		f.resolver();
+	}
+
+}

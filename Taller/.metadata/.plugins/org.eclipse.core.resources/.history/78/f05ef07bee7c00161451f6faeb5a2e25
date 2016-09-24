@@ -1,0 +1,8 @@
+package personaje;
+
+public class NPC implements Atacable  {
+	
+	public void serAtacado(int daño) {
+		serAtacado(daño);
+	}
+}

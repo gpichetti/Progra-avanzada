@@ -1,0 +1,12 @@
+package casa;
+
+public class Rectangulo extends Figura{
+	
+	double lado1;
+	double lado2;
+	
+	public double getSize(){
+		return lado1*lado2;
+	}
+
+}

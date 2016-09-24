@@ -1,0 +1,7 @@
+package punto2D;
+
+public interface Punto {
+	
+	public void clone (Punto2D punto);
+
+}

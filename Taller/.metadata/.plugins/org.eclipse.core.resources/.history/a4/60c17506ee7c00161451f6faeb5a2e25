@@ -1,0 +1,9 @@
+package personaje;
+
+public class NPC implements Atacable  {
+	
+	@Override
+	public void serAtacado(int daño) {
+		super.serAtacado(daño);
+	}
+}

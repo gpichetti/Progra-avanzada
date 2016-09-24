@@ -1,0 +1,9 @@
+package tren;
+
+public class Rectangulo extends Figura{
+	
+	double lado;
+	
+	public double getSize()
+
+}

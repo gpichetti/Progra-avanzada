@@ -1,0 +1,57 @@
+package punto2D;
+
+public class Punto3D extends Punto2D {
+	
+	private double z;
+
+	public Punto3D() {
+		super();
+		this.z = 0;
+	}
+
+	public Punto3D(double x, double y, double z) {
+		super(x,y);
+		this.z = z;
+	}
+	
+	@Override
+	public String toString() {
+		return "Punto3D [x=" + this.x + ", y=" + this.y + ", z=" + this.z + "]";
+	}
+	
+	//Clonar
+	public void clone (Punto3D punto){
+		super.clone(new Punto2D(punto.x, punto.y));
+		this.z = punto.z;
+	}
+	
+	//Distancia entre dos puntos
+	public double obtenerDistancia(Punto3D p)
+	{
+		double difDistX, difDistY, difDistZ;
+		
+		difDistX = Math.abs(this.x - p.x);
+		difDistY = Math.abs(this.y - p.y);
+		difDistZ = Math.abs(this.z - p.z);
+		
+		return Math.sqrt(Math.pow(difDistX, 2) + Math.pow(difDistY, 2) + Math.pow(difDistZ, 2));
+	}
+	
+	public double obtenerDistanciaAlOrigen()
+	{
+		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2) + Math.pow(this.z, 2));
+	}
+	
+	public void cambiarUbicacion(double x, double y, double z)
+	{
+		super.cambiarUbicacion(x, y);
+		this.z = z;
+	}
+	
+	public void cambiarUbicacion(Punto3D p)
+	{
+		super.cambiarUbicacion(new Punto2D(p.x,p.y));
+		this.z = p.z;
+	}
+		
+}

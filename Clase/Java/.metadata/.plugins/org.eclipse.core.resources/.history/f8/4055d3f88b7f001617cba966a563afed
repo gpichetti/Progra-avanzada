@@ -1,0 +1,38 @@
+package formandoEquipos;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class FormandoEquipos {
+	
+	int preguntas;
+	int colaboradores;
+	String respuestas[][];
+
+	
+	public void FormandoEquipos (String ruta){
+		Scanner sc = new Scanner(new File(ruta));
+		this.preguntas = sc.nextInt();
+		this.colaboradores = sc.nextInt();	
+		this.respuestas = new String [this.colaboradores][this.preguntas];
+		for (int i = 0; i < (this.colaboradores); i++) {
+			for (int j = 0; j < (this.preguntas); j++)
+			sc.nextLine();
+			}
+		sc.close();
+	}
+	
+	public static void main(String[] args) {
+		
+		String cadena="hola";
+		char[] l =cadena.toCharArray();
+		System.out.println(cadena);
+		for (int i = 0; i < 4; i++) {
+			System.out.println(l[i]);
+			}
+		
+		
+
+	}
+
+}

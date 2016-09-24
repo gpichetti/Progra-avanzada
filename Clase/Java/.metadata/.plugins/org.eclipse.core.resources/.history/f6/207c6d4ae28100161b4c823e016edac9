@@ -1,0 +1,8 @@
+package punto2D;
+
+public interface Punto {
+	
+	public void clone ();
+	public double obtenerDistancia(Object p);
+	
+}

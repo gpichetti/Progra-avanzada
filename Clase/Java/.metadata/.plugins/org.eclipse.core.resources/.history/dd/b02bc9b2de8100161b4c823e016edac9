@@ -1,0 +1,22 @@
+package punto2D;
+
+public class Punto3D extends Punto2D {
+	
+	private double z;
+
+	public Punto3D() {
+		super();
+		this.z = 0;
+	}
+
+	public Punto3D(double x, double y, double z) {
+		super(x,y);
+		this.z = z;
+	}
+	
+	@Override
+	public String toString() {
+		return "Punto3D [x=" + this.x + ", y=" + this.y + ", z=" + this.z + "]";
+	}
+	
+}

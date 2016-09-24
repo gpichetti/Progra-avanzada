@@ -1,0 +1,70 @@
+package formandoEquipos;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class FormandoEquipos {
+	
+	int preguntas;
+	int colaboradores;
+	String respuestas[];
+
+	
+	public FormandoEquipos (String ruta) throws FileNotFoundException{
+		Scanner sc = new Scanner(new File(ruta));
+		this.preguntas = sc.nextInt();
+		this.colaboradores = sc.nextInt();	
+		this.respuestas = new String [this.colaboradores];
+		sc.nextLine();
+		for (int i = 0; i < (this.colaboradores); i++) {
+			this.respuestas[i]=sc.nextLine();
+		}
+		sc.close();
+			
+	}
+	
+	public void resolver(){
+		String cadena;
+		int cantidadColaboradores=0;
+		int cantidadColaboradoresMax=0;
+		int cantidadCaracteres;
+		this.ordenar();
+		for (int k=0; k<this.preguntas; k++){		
+			cantidadCaracteres = this.preguntas - k;
+			for(int i=0;i<this.colaboradores;i++){
+				for (int j=i+1;j<this.colaboradores;j++){
+					//if(this.respuestas[i].equals(this.respuestas[j])){
+					if(this.respuestas[i].substring(0,cantidadCaracteres).equals(this.respuestas[j].substring(0,cantidadCaracteres))){
+						cadena=this.respuestas[i];
+						cantidadColaboradores++;
+					}
+				}
+				if(cantidadColaboradores>cantidadColaboradoresMax)
+					cantidadColaboradoresMax=cantidadColaboradores;
+			}
+		}
+		//System.out.println(cadena);
+		System.out.println(cantidadColaboradoresMax);
+				
+	}
+	
+	
+	
+	public void ordenar(){
+		Arrays.sort(this.respuestas);
+		for (int i = 0; i < (this.colaboradores); i++) {
+			System.out.println(this.respuestas[i]);
+			}		
+	}
+	
+	
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		FormandoEquipos f = new FormandoEquipos("equipo.in");
+		f.resolver();
+	}
+
+}

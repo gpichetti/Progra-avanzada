@@ -1,0 +1,60 @@
+Algoritmo Sensible: varía el tiempo ejecución en base a la entrada.
+Algoritmo No sensible: no varía el tiempo ejecución en base a la entrada.
+
+Algoritmo Estable: a valores iguales, la salida respeta la posición inicial de ambos.
+
+Tiempo de ejecución: depende del HW, SO, operaciones utilizadas, lenguaje.
+
+
+Algoritmo de Selección: se parte del primero hasta encontrar el valor mas chico y los interacambia; siguiente ejecucuión parte del segundo.
+	Operaciones básicas: Comparación e Intercambio.
+	No es sensible --> No importa si la entrada está ordenada, simepre va a hacer la misma cantidad de compraciones e intercambios. 
+	No es estable
+	Iteraciones --> (n-1)
+	Intercambios --> (n-1)
+	Comparaciones --> (n(n-1))/2
+	Complejidad Computacional ("theeta") --> n^2
+
+
+Algoritmo de Burbujeo:
+	Operaciones básicas: Comparación e Intercambio.
+	Es sensible
+	Es estable
+	En el mejor caso:
+		Iteraciones --> 1
+		Intercambios --> 0
+		Comparaciones --> n
+	En el peor caso:
+		Iteraciones --> (n-1)
+		Intercambios --> (n(n-1))/2
+		Comparaciones --> (n(n-1))/2
+
+
+Algoritmo de Insercion: divide el vector en dos conjuntos (uno ordenado y uno desordenado). Se toma el primer elemento de la parte desordenada, se compara con la parte ordenada, y se lo ubica en la posición correcta. 
+	Ejemplo:
+		3 | 5 7 3' 1 2 4 8 6 --> Tomo el 5
+		3 5 | 7 3' 1 2 4 8 6 --> Tomo el 7
+		3 5 7 | 3' 1 2 4 8 6 --> Tomo el 3'; compara con el 7, se desplaza el 7 una posición a la derecha, etc.
+		3 5 7 3' | 1 2 4 8 6 --> Tomo el 1 ...........
+	Operaciones básicas: Comparación y Desplazamiento 
+	Es sensible
+	Es estable
+	En el mejor caso:
+		Comparaciones --> (n-1)
+		Desplazamientos --> 0
+	En el peor caso:
+		Comparaciones --> (n(n-1))/2
+		Desplazamiento --> (n(n-1))/2
+	
+	Más rápido que burbujeo porque el desplazamiento es menos costoso que el intercambio
+	
+
+
+
+A*X=B
+
+A(-1)*B=X'
+
+A*X'=B'
+
+||B-B'|| < e

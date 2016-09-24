@@ -1,0 +1,11 @@
+package casa;
+
+public class Circulo extends Figura {
+
+	double radio;
+	
+	public double getSize(){
+		return Math.PI*(Math.pow(this.radio,2));
+	}
+	
+}

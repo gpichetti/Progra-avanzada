@@ -1,0 +1,11 @@
+package punto2D;
+
+public interface Punto {
+	
+	public Object clone ();
+	public double obtenerDistancia(Object p);
+	public double obtenerDistanciaAlOrigen();
+	public void desplazar (Object asd);
+	public boolean equals (Object p2);
+	
+}

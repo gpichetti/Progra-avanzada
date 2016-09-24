@@ -1,0 +1,9 @@
+package tren;
+
+public class Cuadrado extends Figura{
+	
+	double lado;
+	
+	public double getSize()
+
+}

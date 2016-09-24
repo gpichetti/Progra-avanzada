@@ -1,0 +1,36 @@
+Patrones de diseño:
+
+Es una solucion comun a un problema recurrente 
+
+Singleton
+Sirve para controlar la cantidad de instancias que quiero de una clase.
+
+public class Stock{
+	//2-Unica instancia
+	private	static Stock instance = new Stock();
+	//1-Constructor privado
+	private Stock(){..}
+	//3-Manera de acceder a la instancia
+	public static Stock getInstance(){
+		return instance;
+	}
+}
+
+static: es de la clase y no del objeto.
+No usa polimorfismo
+
+
+Patron Composite
+
+Se basa en una estructura de tipo jerarquica y es una solucion polimorfica.
+
+
+
+public int getSize(){
+	int total = 0;
+	for(Elemento e: contenido)
+		total +=e.getSize();
+
+	return total;
+}
+
