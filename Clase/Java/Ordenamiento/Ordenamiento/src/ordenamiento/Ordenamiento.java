@@ -131,11 +131,11 @@ public class Ordenamiento {
 
 	public static void main(String[] args) {
 		
-		Ordenamiento ord = new Ordenamiento(190000);
+		Ordenamiento ord = new Ordenamiento(10000);
 //		System.out.println(ord.toString());
 		ord.seleccion();
 		
-		Ordenamiento ord2 = new Ordenamiento(190000);
+		Ordenamiento ord2 = new Ordenamiento(10000);
 		ord2.burbujeo();
 		
 		Ordenamiento ord3 = new Ordenamiento(10000);

@@ -1,4 +1,4 @@
-package ordenamiento;
+package algoritmosOrdenamiento;
 
 import java.util.GregorianCalendar;
 import java.util.Calendar;
@@ -7,7 +7,7 @@ public class Ordenamiento {
 
 	double [] vector;
 	int tam;
-	
+
 	public Ordenamiento(int tam) {
 		this.vector = new double [tam];
 		this.tam = tam;
@@ -69,47 +69,28 @@ public class Ordenamiento {
 		System.out.println(diff);
 	}
 	
-	
-	/*public void insercion(){
-	    int p, j;
-	    double aux;
-	    Calendar tIni = new GregorianCalendar();
-	    for (p = 1; p < this.vector.length; p++){ // desde el segundo elemento hasta
-	          aux = this.vector[p]; // el final, guardamos el elemento y
-	          j = p - 1; // empezamos a comprobar con el anterior
-	          while ((j >= 0) && (aux < this.vector[j])){ // mientras queden posiciones y el
-	                                                                // valor de aux sea menor que los
-	        	  this.vector[j + 1] = this.vector[j];       // de la izquierda, se desplaza a
-	              j--;                   // la derecha
-	          }
-	          this.vector[j + 1] = aux; // colocamos aux en su sitio
-	    }
-	    Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
-		System.out.println(diff);
-	}*/
-	
 	public void insercion(){
-	    int i, j;
+	    int i, j, pos;
 	    double aux;
 	    Calendar tIni = new GregorianCalendar();
-	    
+	   
 	    for (i = 1; i < this.vector.length; i++){ 
 	          aux = this.vector[i];
+	          j = i-1;
+	          pos=i; 
 	          
-	          for(j = i-1; j >= 0; j--){
-	        	  if((aux < this.vector[j]))
-	        	  {
+	          while (j>=0)
+	          {
+	        	  if(aux < this.vector[j]){
 	        		  this.vector[j + 1] = this.vector[j];
-	        	  }
+	        		  pos = j;
+	        		  j--;
+	        	  }else
+	        		  j=-1;
+	        	  
 	          }
-	          /* j = i - 1; 
-	          while ((j >= 0) && (aux < this.vector[j])){ 
-	                                                              
-	        	  this.vector[j + 1] = this.vector[j]; 
-	              j--; 
-	          }*/
-	          this.vector[j + 1] = aux;
+
+	          this.vector[pos] = aux;
 	    }
 	    
 	    Calendar tFin = new GregorianCalendar();
@@ -130,12 +111,16 @@ public class Ordenamiento {
 
 	public static void main(String[] args) {
 		
-		Ordenamiento ord = new Ordenamiento(10);
-		System.out.println(ord.toString());
-//		ord.seleccion();
-//		ord.burbujeo();
-		ord.insercion();
-		System.out.println(ord.toString());
+		Ordenamiento ord = new Ordenamiento(10000);
+//		System.out.println(ord.toString());
+		ord.seleccion();
+		
+		Ordenamiento ord2 = new Ordenamiento(10000);
+		ord2.burbujeo();
+		
+		Ordenamiento ord3 = new Ordenamiento(10000);
+		ord3.insercion();
 	}
 
 }
+
