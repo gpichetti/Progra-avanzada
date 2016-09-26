@@ -2941,3 +2941,4 @@ Caused by: java.util.zip.ZipException: error in opening zip file
 	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3522) ~[com.google.guava_15.0.0.v201403281430.jar:na]
 	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2315) ~[com.google.guava_15.0.0.v201403281430.jar:na]
 	... 92 common frames omitted
+2016-09-25 23:30:15,598 [Worker-15] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

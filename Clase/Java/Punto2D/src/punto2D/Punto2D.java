@@ -16,12 +16,12 @@ public class Punto2D{
 	}
 	
 	//Constructores
-	private Punto2D()
+	protected Punto2D()
 	{
 		this.x = this.y = 0;
 	}
 	
-	private Punto2D(double x, double y)
+	protected Punto2D(double x, double y)
 	{
 		this.x = x;
 		this.y = y;
